@@ -1,0 +1,19 @@
+//====================================================================================================
+.footer {
+	background-color: #15358d;
+	&__container {
+		display: grid;
+		place-items: center;
+		padding-block: 11.875rem;
+		@media (max-width:$mobile){
+			 padding-block: 7.8125rem; 
+		}
+	}
+
+	&__text {
+		font-size: toRem(16);
+		color: #fff;
+	}
+}
+
+//====================================================================================================

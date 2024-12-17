@@ -1,0 +1,31 @@
+.header {
+	background-color: #fff;
+	padding-block: 38px;
+	@media (max-width:$mobile){
+		 padding-block: 25px; 
+	}
+	&__container {
+	}
+
+	&__menu {
+	}
+}
+.menu {
+
+	&__body {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+
+	&__link {
+	}
+
+	&__icon {
+	}
+}
+.icon-menu {
+}
