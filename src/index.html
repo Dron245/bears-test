@@ -1,8 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HomePage"
-	})
+	@@include('html/_head.htm',{ "title":"HomePage" })
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
@@ -24,9 +22,73 @@
 					<div class="priorities__container">
 						<h1 class="priorities__title title">Приоритеты</h1>
 						<div class="priorities__banner">
-							<img src="@img/banner.png" alt="Image">
+							<picture>
+								<source media="(min-width: 1024px)" srcset="img/bears/desktop/hero-bear1.png"/>
+								<source media="(min-width: 768px)" srcset="img/bears/tablet/hero-tablet-bear1.png"/>
+								<source media="(min-width: 375px)" srcset="img/bears/small_tablet/hero-tablet-small-bear1.png"/>
+								<img src="img/bears/mobile/hero-mobile-bear1.png" alt="Image" />
+							</picture>
+							<picture>
+								<source media="(min-width: 1024px)" srcset="img/bears/desktop/hero-bear2.png"/>
+								<source media="(min-width: 768px)" srcset="img/bears/tablet/hero-tablet-bear2.png"/>
+								<source media="(min-width: 375px)" srcset="img/bears/small_tablet/hero-tablet-small-bear2.png"/>
+								<img src="img/bears/mobile/hero-mobile-bear2.png" alt="Image" />
+							</picture>
+							<picture>
+								<source media="(min-width: 1024px)" srcset="img/bears/desktop/hero-bear3.png"/>
+								<source media="(min-width: 768px)" srcset="img/bears/tablet/hero-tablet-bear3.png"/>
+								<source media="(min-width: 375px)" srcset="img/bears/small_tablet/hero-tablet-small-bear3.png"/>
+								<img src="img/bears/mobile/hero-mobile-bear3.png" alt="Image" />
+							</picture>
+							 <!-- <img src="@img/bears/desktop/hero-bear1.png" alt="Image"> -->
+							 <!-- <img src="@img/bears/desktop/hero-bear2.png" alt="Image"> -->
+							 <!-- <img src="@img/bears/desktop/hero-bear3.png" alt="Image"> -->
 						</div>
-						
+						<div class="priorities__action action">
+							<button class="action__top button">
+								<span class="action__text">Приоритеты</span>
+								<svg
+									width="8"
+									height="9"
+									viewBox="0 0 8 9"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_24_492)">
+										<path
+											d="M-2 1.5L4 7.5L10 1.5"
+											stroke="#2B2B2B"
+											stroke-linecap="round"
+											stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_24_492">
+											<rect width="8" height="8" fill="white" transform="translate(0 0.5)" />
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+							<div class="action__select">
+								<ul class="action__list">
+									<li class="action__item _picked">
+										<p class="action__text">Все направления</p>
+									</li>
+									<li class="action__item">
+										<p class="action__text">Забота о каждом нуждающемся</p>
+									</li>
+									<li class="action__item">
+										<p class="action__text">
+											Развитие регионов и транспортной инфраструктуры страны
+										</p>
+									</li>
+									<li class="action__item">
+										<p class="action__text">
+											Культура, история, традиции
+										</p>
+									</li>
+								</ul>
+							</div>
+							<ul class="action__picked picked"></ul>
+						</div>
 					</div>
 				</section>
 			</main>

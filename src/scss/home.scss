@@ -1,11 +1,20 @@
 //====================================================================================================
 .page {
-
-	&__breadcrumbs {}
+	& > * {
+		margin-bottom: toRem(64);
+		@media (max-width: $mobile) {
+			margin-bottom: toRem(32);
+		}
+	}
+	&__breadcrumbs {
+	}
 }
 
 .breadcrumbs {
-
+	margin-top: toRem(32);
+	@media (max-width: $mobile) {
+		margin-top: toRem(16);
+	}
 	&__list {
 		display: flex;
 		flex-wrap: nowrap;
@@ -23,7 +32,7 @@
 		display: flex;
 		align-items: center;
 		&::after {
-			content: '';
+			content: "";
 			margin-left: 16px;
 			margin-right: 16px;
 			width: 8px;
@@ -34,7 +43,7 @@
 
 		&:first-child {
 			&::after {
-				content: '';
+				content: "";
 				// padding-left: 16px;
 				// padding-right: 16px;
 			}
@@ -43,10 +52,168 @@
 
 	&__current {
 		text-wrap: nowrap;
-		
-		
+
 		color: $secondColor;
 	}
 }
 
-//====================================================================================================
+//=========priorities===========================================================================================
+
+.page {
+	&__priorities {
+	}
+}
+.priorities {
+	&__container {
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 2rem;
+		color: #2b2b2b;
+		@media (max-width: $mobile) {
+			font-size: toRem(24);
+		}
+	}
+
+	&__banner {
+		outline: 1px solid red;
+		margin-block: 32px;
+		position: relative;
+		height: 194px;
+		@media (min-width: 768px) {
+			margin-block: toRem(32);
+		}
+		@media (min-width: 23.4375rem) and (max-width: 48rem) {
+			margin-block: 1rem;
+		}
+		@media (max-width: toEm(375)) {
+			margin-block: toRem(45);
+		}
+		img {
+			position: absolute;
+			width: 100%;
+		}
+	}
+
+	&__action {
+	}
+}
+.title {
+}
+.action {
+	display: flex;
+	align-items: center;
+	gap: toRem(8);
+	position: relative;
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: toRem(8);
+		background-color: #fff;
+		color: #323232;
+		
+		&:hover {
+			background-color: $secondColor;
+			color: #fff;
+			& svg path {
+				stroke: #fff;
+			}
+		}
+		svg {
+			transition: transform 0.3s;
+		}
+		._active & {
+			svg {
+				transform: rotateX(180deg);
+			}
+		}
+	}
+
+	&__select {
+		// display: none;
+		position: absolute;
+		top: calc(100% + 1rem);
+		border-radius: 16px;
+		max-width: 340px;
+		padding: 16px 8px;
+		text-align: center;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		background: #fff;
+		._active & {
+			display: block;
+		}
+	}
+
+	&__list {
+		line-height: 1.25rem;
+		text-align: left;
+	}
+
+	&__item {
+		position: relative;
+		border-radius: 100px;
+		padding: 8px 16px;
+		background-color: #eef3f9;
+		width: fit-content;
+		// width: 270px;
+		display: inline-block;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		transition: width 0.3s, background-color 0.3s;
+		&:hover{
+			color: #fff;
+			background-color: $secondColor;
+			&::after{
+			background-color: $secondColor;
+			}
+		}
+		&::after{
+			content:'';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			border-radius: 0 100px 100px 0;
+			padding: 0 8px 0px 0;
+			width: 36px;
+			right: 0;
+			height: 100%;
+			// background: #eef3f9 url('@img/x.svg') center no-repeat;
+			transition: right 0.3s, background-color 0.3s;
+			z-index: 0;
+		}
+		&._picked {
+			background-color: $thirdColor;
+			color: #fff;
+			&::after{
+				background: $thirdColor url('@img/x.svg') center no-repeat;
+				right: -10px;
+				z-index: 1;
+			}
+			
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(8);
+		}
+	}
+
+	&__text {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__picked {
+		display: flex;
+		gap: toRem(16);
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
+
+.picked {
+	&__item[class] {
+		margin-bottom: 0;
+	}
+}
