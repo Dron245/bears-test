@@ -96,6 +96,11 @@
 		}
 	}
 
+	&__img {
+		&._shadow {
+			filter: brightness(0.5);
+		}
+	}
 	&__action {
 	}
 }

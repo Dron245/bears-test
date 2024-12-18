@@ -11,9 +11,6 @@
 							<a href="#" class="breadcrumbs__link">Главная</a>
 						</li>
 						<li class="breadcrumbs__item">
-							<a href="#" class="breadcrumbs__link">Главная</a>
-						</li>
-						<li class="breadcrumbs__item">
 							<span class="breadcrumbs__current">Приоритеты</span>
 						</li>
 					</ul>
@@ -26,19 +23,19 @@
 								<source media="(min-width: 1024px)" srcset="img/bears/desktop/hero-bear1.png"/>
 								<source media="(min-width: 768px)" srcset="img/bears/tablet/hero-tablet-bear1.png"/>
 								<source media="(min-width: 375px)" srcset="img/bears/small_tablet/hero-tablet-small-bear1.png"/>
-								<img src="img/bears/mobile/hero-mobile-bear1.png" alt="Image" />
+								<img class="priorities__img" data-img="1" src="img/bears/mobile/hero-mobile-bear1.png" alt="Image" />
 							</picture>
 							<picture>
 								<source media="(min-width: 1024px)" srcset="img/bears/desktop/hero-bear2.png"/>
 								<source media="(min-width: 768px)" srcset="img/bears/tablet/hero-tablet-bear2.png"/>
 								<source media="(min-width: 375px)" srcset="img/bears/small_tablet/hero-tablet-small-bear2.png"/>
-								<img src="img/bears/mobile/hero-mobile-bear2.png" alt="Image" />
+								<img class="priorities__img" data-img="2" src="img/bears/mobile/hero-mobile-bear2.png" alt="Image" />
 							</picture>
 							<picture>
 								<source media="(min-width: 1024px)" srcset="img/bears/desktop/hero-bear3.png"/>
 								<source media="(min-width: 768px)" srcset="img/bears/tablet/hero-tablet-bear3.png"/>
 								<source media="(min-width: 375px)" srcset="img/bears/small_tablet/hero-tablet-small-bear3.png"/>
-								<img src="img/bears/mobile/hero-mobile-bear3.png" alt="Image" />
+								<img class="priorities__img" data-img="3" src="img/bears/mobile/hero-mobile-bear3.png" alt="Image" />
 							</picture>
 							 <!-- <img src="@img/bears/desktop/hero-bear1.png" alt="Image"> -->
 							 <!-- <img src="@img/bears/desktop/hero-bear2.png" alt="Image"> -->
@@ -69,25 +66,29 @@
 							</button>
 							<div class="action__select">
 								<ul class="action__list">
-									<li class="action__item _picked">
+									<li class="action__item _picked" data-part="0">
 										<p class="action__text">Все направления</p>
 									</li>
-									<li class="action__item">
+									<li class="action__item" data-part="1">
 										<p class="action__text">Забота о каждом нуждающемся</p>
 									</li>
-									<li class="action__item">
+									<li class="action__item" data-part="2">
 										<p class="action__text">
 											Развитие регионов и транспортной инфраструктуры страны
 										</p>
 									</li>
-									<li class="action__item">
+									<li class="action__item" data-part="3">
 										<p class="action__text">
 											Культура, история, традиции
 										</p>
 									</li>
 								</ul>
 							</div>
-							<ul class="action__picked picked"></ul>
+							<ul class="action__picked picked">
+								<li class="picked__item action__item _picked" data-part="0">
+									<p class="action__text">Все направления</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</section>
