@@ -1,56 +1,174 @@
 .page {
-
 	&__achievements {
 	}
 }
 .achievements {
-
+	margin-bottom: toRem(33);
+	@media (max-width: $mobile) {
+		margin-bottom: toRem(16);
+	}
 	&__container {
 	}
 
 	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2.5rem;
+		@media (max-width: $mobile) {
+			margin-bottom: toRem(15);
+		}
 	}
 
 	&__title {
+		font-weight: 600;
+		font-size: toRem(20);
+		@media (max-width: $mobile) {
+			font-size: toRem(16);
+		}
 	}
 
 	&__max {
+		font-weight: 500;
+		color: $fourColor;
+		@media (max-width: $mobile) {
+			font-size: toRem(12);
+		}
+		@media (max-width: toEm(375)) {
+			display: none;
+		}
 	}
 
 	&__content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+		gap: toRem(20);
 	}
 
 	&__item {
 	}
+
+	&__button {
+		margin-top: 32px;
+		@media (min-width:$mobile){
+			margin-inline: auto;
+			  
+		}
+		@media (max-width:$mobile){
+			width: 100%;
+			 margin-top: 16px; 
+		}
+	}
 }
 .achievement {
-
+	outline: 1px solid red;
+	background-color: #fff;
+	border-radius: 20px;
+	overflow: hidden;
+	line-height: math.div(24, 20);
+	display: flex;
+	flex-direction: column;
 	&__img {
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
+	&__content {
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		flex: 1;
+	}
 	&__title {
+		@extend .achievements__title;
+		margin-bottom: toRem(8);
 	}
 
 	&__text {
+		margin-bottom: toRem(23);
 	}
 
 	&__actions {
+		margin-top: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 .actions {
-
-	&__link {
+	&__link.button {
+		background-color: $secondColor;
+		&:hover {
+			background-color: $thirdColor;
+		}
 	}
 
 	&__likes {
+		// outline: 1px solid red;
+		position: relative;
+		border-radius: 100px;
+		// padding: 0.25rem;
+		background: #eef3f9;
+		width: 32px;
+		height: 32px;
+		// display: grid;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: width 0.3s;
+		
+		&:hover{
+			width: 64px;
+			justify-content: space-between;
+			.actions__like {
+				margin-left: 8px;
+				&::after{
+					background-color: #00AEEF;
+				}
+				svg path {
+					stroke: #fff;
+				}
+			}
+			.actions__count {
+				display: block;
+				margin-right: 8px;
+			}
+		}
 	}
 
 	&__like {
+		position: relative;
+		display: grid;
+		place-items: center;
+		&::after{
+			content:'';
+			position: absolute;
+			width: 24px;
+			aspect-ratio: 1/1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			background-color: #ADD6FF;
+			transition: background-color 0.3s;
+		}
+		svg {
+			position: relative;
+			z-index: 1;
+		}
 	}
 
 	&__count {
+		// position: absolute;
+		font-weight: 500;
+font-size: 14px;
+color: #2e4ea4;
+		display: none;
 	}
 }
 .button {
 }
-
