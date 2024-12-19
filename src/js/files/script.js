@@ -120,7 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	const banner = document.querySelector('.priorities__banner');
 	banner.style.height = img.clientHeight + 'px'
 	let resizeTimeout;
-window.addEventListener('resize', function() {
+	window.addEventListener('resize', function() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
 	banner.style.height = img.clientHeight + 'px'
