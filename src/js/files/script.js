@@ -5,46 +5,64 @@ import { flsModules } from './modules.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 	document.addEventListener('click', documentActions);
-
+	const sel= []
 	function documentActions(e) {
 		const targetElement = e.target;
-		const action = targetElement.closest('.action__item')
-		const list = document.querySelector('.action__list')
+		const action = targetElement.closest('.action__item');
+		const list = document.querySelector('.action__list');
 		const pickedList = document.querySelector('.picked');
+		const img = document.querySelectorAll('.priorities__img') 
 		console.log(targetElement);
 		if (targetElement.closest('.action__top')) {
 			targetElement.closest('.action').classList.toggle('_active');
 		}
 		//выбираю из выпадающего меню
+		img.forEach(element => {
+			console.log(0);
+			element.classList.add('_shadow')
+		});
+		console.log(sel);
+		
 		if (action && action.dataset.part !=='0') {
 			const item = targetElement.closest('.action__item');
 			const imgBears = document.querySelectorAll('.priorities__img')
-			if (document.querySelectorAll('._shadow').length == 0) {
-				imgBears.forEach(element => {
-					if (element.dataset.img === action.dataset.part) {
-						console.log(9);
-						element.classList.add('_shadow')
-					}
-				});
-			}
 			
 			imgBears.forEach(element => {
-				if (element.dataset.img === action.dataset.part) {
-					console.log(123);
-					element.classList.toggle('_shadow')
+				// element.classList.add('_shadow')
+				if (element.dataset.img === action.dataset.part ) {
+					// element.classList.add('_shadow')
+					function toggleElement(number) {
+						const index = sel.indexOf(number);
+						if (index === -1) {
+						  sel.push(number);
+						} else {
+						  sel.splice(index, 1);
+						}
+					 }
+					 toggleElement(element.dataset.img)
+					 console.log(sel);
+					 if (sel.length===0) {
+						console.log(document.querySelector(`._picked[data-part="0"]`));
+						img.forEach(element => {
+							element.classList.remove('_shadow')
+						});
+					}
 				}
+				for (let i = 0; i < sel.length; i++) {
+					if(element.dataset.img ===sel[i]) {
+						element.classList.remove('_shadow')
+					}
+				}
+				// console.log(sel.length, img.length);
+				
 			});
-			// imgBears.forEach(element => {
-			// 	if (element.dataset.img === action.dataset.part) {
-			// 		element.classList.remove('_shadow')
-			// 	}
-			// });
-			// document.querySelector(`[data-img='${action.dataset.part}']`).classList.remove('_shadow')
+			// console.log(sel.length, img.length);
+			
 			pickedList.querySelector("[data-part='0']") ? 
 			pickedList.querySelector("[data-part='0']").remove() : null
 			list.querySelector("[data-part='0']").classList.remove('_picked')
 			item.classList.toggle('_picked');
-
+			
 			console.log(777);
 			if (pickedList.querySelector('.action__item') && 
 			pickedList.querySelector(`[data-part='${item.dataset.part}']`)) {
@@ -58,10 +76,12 @@ window.addEventListener('DOMContentLoaded', () => {
 					</li>`
 				);
 			}
-			// if (action.dataset.part !=='0') {
-			// 	console.log(123);
-			// }
+		
 		} else {
+			img.forEach(element => {
+				element.classList.remove('_shadow')
+			});
+			sel.length=0
 			if (action && !pickedList.querySelector("[data-part='0']")) {
 				pickedList.querySelectorAll('.picked__item').forEach(el=>el.remove())
 				pickedList.insertAdjacentHTML(
@@ -86,6 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		if ((action && list.querySelectorAll('._picked').length<1)) {
 			list.querySelector("[data-part='0']").classList.add('_picked');
+			
 			pickedList.insertAdjacentHTML(
 				'beforeEnd',
 				`<li class="picked__item action__item _picked" data-part="0">
@@ -94,4 +115,16 @@ window.addEventListener('DOMContentLoaded', () => {
 			);
 		}
 	}
+
+	const img = document.querySelector('.priorities__img')
+	const banner = document.querySelector('.priorities__banner');
+	banner.style.height = img.clientHeight + 'px'
+	let resizeTimeout;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+	banner.style.height = img.clientHeight + 'px'
+  }, 100); // Задержка в 100 миллисекунд
+});
+	
 });

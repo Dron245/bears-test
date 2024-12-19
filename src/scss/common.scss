@@ -1,6 +1,6 @@
 // Заголовки, общие БЄМ блоки и прочее...
 .button {
-	background-color: $secondColor;
+	background-color: $thirdColor;
 	display: grid;
 	place-items: center;
 	border-radius: 100px;
@@ -8,6 +8,6 @@
 	color: #fff;
 	transition: background-color 0.3s;
 	&:hover{
-		background-color: $thirdColor;
+		background-color: $secondColor;
 	}
 }

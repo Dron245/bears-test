@@ -28,6 +28,8 @@
 			}
 			.menu-open & {
 				right: 0;
+				z-index: 3;
+				background-color: #fff;
 				&::before {
 					right: 0;
 				}
