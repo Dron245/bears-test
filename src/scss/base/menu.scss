@@ -28,7 +28,7 @@
 			}
 			.menu-open & {
 				right: 0;
-				z-index: 3;
+				z-index: 6;
 				background-color: #fff;
 				&::before {
 					right: 0;
@@ -72,7 +72,7 @@
 		position: relative;
 		width: toRem(24);
 		height: toRem(14);
-		z-index: 5;
+		z-index: 6;
 		@media (any-hover: none) {
 			cursor: default;
 		}
