@@ -6,18 +6,64 @@
 .verify {
 
 	&__container {
-	}
+		}
 
-	&__content {
+	&__body {
+		@media (min-width:$mobile){
+			background:#0770dc url('@img/verify/verify1.png') 0 0 / cover no-repeat;
+		}
+		background:#0770dc;
+		border-radius: 1.25rem;
+		// background-color: #0770dc;
+	
 	}
+	&__content {
+		@media (min-width:toEm(1024)){
+			padding-inline: 2.5rem;
+			padding-block: 2.8125rem;
+			  
+		}
+		@media (max-width: toEm(1024)){
+			  @include adaptiveValue("padding-block", 45, 28,0,1024,768);
+			  @include adaptiveValue("padding-inline", 40, 23,0,1024,375);
+		}
+		@media (max-width:$mobile){
+			 padding-bottom: 0; 
+		}
+		border-radius: 1.25rem;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		// background-color: #0770dc;
+		}
 
 	&__img {
+		margin-left: auto;
+		@media (min-width:$mobile){
+			 display: none; 
+		}
 	}
 
 	&__title {
+		font-weight: 600;
+		color: #fff;
+font-size: 2rem;
+@media (min-width:$mobile){
+	  
+	margin-bottom: 5rem;
+}
+@media (max-width:$mobile){
+	 @include adaptiveValue("margin-bottom", 70, 18,0,768,375); 
+}
+@media (max-width:$mobile){
+	 font-size: toRem(24); 
+}
 	}
 
 	&__link {
+		display: inline-block;
 	}
 }
 .button {

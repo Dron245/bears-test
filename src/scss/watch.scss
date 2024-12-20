@@ -1,0 +1,76 @@
+.page {
+
+	&__watch {}
+}
+
+.watch {
+
+	&__container {}
+
+	&__body {
+		display: flex;
+		// grid-template-columns: 32.20339% 1fr; /* 380/1180 */
+		gap: 1rem 1.25rem;
+
+		@media (max-width:$mobile) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		position: relative;
+		background: $thirdColor;
+		border-radius: 1.25rem;
+		padding: toRem(32) toRem(24) toRem(24) toRem(24);
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		overflow: hidden;
+
+		@media (min-width:$mobile) {
+			flex: 0 0 32.20339%;
+		}
+	}
+
+	&__title {
+		@extend .verify__title;
+		@include adaptiveValue("font-size", 32, 24,0,1180,768);
+		margin-bottom: 0;
+		// @include adaptiveValue("margin-bottom", 230, 72, 0, 1180, 768);
+		@media (max-width:$mobile){
+			 @include adaptiveValue("margin-bottom", 72, 33,0,768,375); 
+		}
+		@media (max-width:$mobileSmall){
+			 max-width: 12.5rem; 
+		}
+	}
+
+	&__img {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		@include adaptiveValue("width", 250, 150,0,1180,768);
+		@media (max-width:$mobile){
+			 right: 1rem; 
+		}
+	}
+
+	&__link {
+		// display: inline-block;
+		background-color: $secondColor;
+	}
+
+	&__video {
+		video {
+			cursor: pointer;
+			border-radius: 20px;
+			width: 100%;
+			aspect-ratio: 780/396;
+			@media (max-width:$mobile){
+				 aspect-ratio: 728/330; 
+			}
+		}
+	}
+}

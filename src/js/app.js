@@ -12,7 +12,7 @@
 */
 
 // Включить/выключить FLS (Full Logging System) (в работе)
-window['FLS'] = true;
+window['FLS'] = false;
 
 // Подключение основного файла стилей
 import "../scss/style.scss";
@@ -186,7 +186,7 @@ flsForms.formFieldsInit({
 // Документация по работе в шаблоне: https://start-template.ru/modul-lenivaya-podgruzka-lazy-loading-chertogi-frilansera-v3-0-0/
 // Документация плагина: https://github.com/verlok/vanilla-lazyload
 // Сниппет(HTML):
- import './files/scroll/lazyload.js';
+// import './files/scroll/lazyload.js';
 
 // Наблюдатель объектов с атрибутом data-watch
 // Документация: https://start-template.ru/modul-nablyudatel-po-poyavleniyu-elementov-pri-prokrutke-straniczy-skrolle-chertogi-frilansera-v3-0-0/

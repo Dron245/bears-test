@@ -1,20 +1,22 @@
 .page {
-	&__achievements {
-	}
+	&__achievements {}
 }
+
 .achievements {
 	margin-bottom: toRem(33);
+
 	@media (max-width: $mobile) {
 		margin-bottom: toRem(16);
 	}
-	&__container {
-	}
+
+	&__container {}
 
 	&__top {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 2.5rem;
+
 		@media (max-width: $mobile) {
 			margin-bottom: toRem(15);
 		}
@@ -23,6 +25,7 @@
 	&__title {
 		font-weight: 600;
 		font-size: toRem(20);
+
 		@media (max-width: $mobile) {
 			font-size: toRem(16);
 		}
@@ -31,9 +34,11 @@
 	&__max {
 		font-weight: 500;
 		color: $fourColor;
+
 		@media (max-width: $mobile) {
 			font-size: toRem(12);
 		}
+
 		@media (max-width: toEm(375)) {
 			display: none;
 		}
@@ -45,29 +50,32 @@
 		gap: toRem(20);
 	}
 
-	&__item {
-	}
+	&__item {}
 
 	&__button {
 		margin-top: 32px;
-		@media (min-width:$mobile){
+
+		@media (min-width:$mobile) {
 			margin-inline: auto;
-			  
+
 		}
-		@media (max-width:$mobile){
+
+		@media (max-width:$mobile) {
 			width: 100%;
-			 margin-top: 16px; 
+			margin-top: 16px;
 		}
 	}
 }
+
 .achievement {
-	outline: 1px solid red;
+	// outline: 1px solid red;
 	background-color: #fff;
 	border-radius: 20px;
 	overflow: hidden;
 	line-height: math.div(24, 20);
 	display: flex;
 	flex-direction: column;
+
 	&__img {
 		img {
 			width: 100%;
@@ -82,6 +90,7 @@
 		height: auto;
 		flex: 1;
 	}
+
 	&__title {
 		@extend .achievements__title;
 		margin-bottom: toRem(8);
@@ -98,9 +107,11 @@
 		align-items: center;
 	}
 }
+
 .actions {
 	&__link.button {
 		background-color: $secondColor;
+
 		&:hover {
 			background-color: $thirdColor;
 		}
@@ -120,22 +131,34 @@
 		align-items: center;
 		cursor: pointer;
 		transition: width 0.3s;
-		
-		&:hover{
+
+		&:hover {
 			width: 64px;
 			justify-content: space-between;
+
 			.actions__like {
 				margin-left: 8px;
-				&::after{
+
+				&::after {
 					background-color: #00AEEF;
 				}
+
 				svg path {
 					stroke: #fff;
 				}
 			}
+
 			.actions__count {
 				display: block;
 				margin-right: 8px;
+			}
+		}
+
+		&:active {
+			.actions__like {
+				&::after {
+					background-color: $thirdColor;
+				}
 			}
 		}
 	}
@@ -144,8 +167,9 @@
 		position: relative;
 		display: grid;
 		place-items: center;
-		&::after{
-			content:'';
+
+		&::after {
+			content: '';
 			position: absolute;
 			width: 24px;
 			aspect-ratio: 1/1;
@@ -156,6 +180,7 @@
 			background-color: #ADD6FF;
 			transition: background-color 0.3s;
 		}
+
 		svg {
 			position: relative;
 			z-index: 1;
@@ -165,10 +190,10 @@
 	&__count {
 		// position: absolute;
 		font-weight: 500;
-font-size: 14px;
-color: #2e4ea4;
+		font-size: 14px;
+		color: #2e4ea4;
 		display: none;
 	}
 }
-.button {
-}
+
+.button {}
